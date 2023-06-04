@@ -1,0 +1,103 @@
+/* Global settings */
+* {
+  box-sizing: border-box;
+}
+
+/* Color palette */
+:root {
+  --dark-background: #0b0c10;
+  --dark-secondary: #1f2833;
+  --light-gray: #c5c6c7;
+  --bright-turquoise: #66fcf1;
+  --dark-turquoise: #45a29e;
+}
+
+/* Base settings for the page */
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  background-color: var(--dark-background);
+  color: var(--light-gray);
+}
+
+/* Remove scrollbar from the body */
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Landing image container settings */
+#landingImage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+/* Landing image settings */
+#landingImage img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Menu icon settings */
+#menuIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Menu icon image settings */
+#menuIcon img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Menu options container settings */
+#menuOptions {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  overflow: auto;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+/* Class for showing the menu */
+.show {
+  display: block !important;
+}
+
+/* Menu options list settings */
+#menuOptions ul {
+  list-style-type: none;
+  padding: 20px;
+  padding-top: 50px;
+  color: var(--bright-turquoise); /* Updated to use color variable */
+  font-size: 2em;
+  line-height: 2;
+  text-align: right;
+}
+
+/* Menu options list item settings */
+#menuOptions ul li {
+  padding: 10px;
+  transition: color 0.3s ease; /* Added for color transition on hover */
+}
+
+/* Change color on hover */
+#menuOptions ul li:hover {
+  color: var(--dark-turquoise);
+}
