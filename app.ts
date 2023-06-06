@@ -1,3 +1,9 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Swiper from "swiper";
+
+gsap.registerPlugin(ScrollTrigger);
+
 document.addEventListener("DOMContentLoaded", function () {
   const menuImage = document.getElementById("menuImage") as HTMLImageElement; // Cast to HTMLImageElement
   const menuOptions = document.getElementById("menuOptions");
