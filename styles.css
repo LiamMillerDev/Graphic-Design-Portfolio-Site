@@ -49,8 +49,8 @@ body::-webkit-scrollbar {
 #menuIcon {
   position: absolute;
   top: 20px;
-  right: 20px;
-  z-index: 2;
+  left: 20px;
+  z-index: 3;
   cursor: pointer;
 }
 
@@ -64,40 +64,60 @@ body::-webkit-scrollbar {
 /* Menu options container settings */
 #menuOptions {
   position: fixed;
-  width: 100%;
+  width: 0;
+  max-width: 750px;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
-  overflow: auto;
-  transition: all 0.3s ease;
-  display: none;
+  background-color: var(--dark-background);
+  z-index: 2;
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
 /* Class for showing the menu */
 .show {
-  display: block !important;
+  width: 100% !important;
 }
 
 /* Menu options list settings */
 #menuOptions ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
   list-style-type: none;
-  padding: 20px;
-  padding-top: 50px;
-  color: var(--bright-turquoise); /* Updated to use color variable */
-  font-size: 2em;
+  padding: 0 20px;
+  color: var(--bright-turquoise);
+  font-size: 2.5em;
   line-height: 2;
-  text-align: right;
+  text-align: left;
 }
 
 /* Menu options list item settings */
 #menuOptions ul li {
   padding: 10px;
-  transition: color 0.3s ease; /* Added for color transition on hover */
+  transition: color 0.3s ease;
 }
 
 /* Change color on hover */
 #menuOptions ul li:hover {
   color: var(--dark-turquoise);
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 501px) {
+  #menuOptions {
+    max-width: 500px;
+  }
 }
