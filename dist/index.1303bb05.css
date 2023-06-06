@@ -38,74 +38,108 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 
-#menuIcon {
+.hamburger-icon {
+  height: 60px;
+  width: 60px;
   z-index: 3;
   cursor: pointer;
+  background: #fff3;
+  border-radius: 50%;
+  transition: all .2s ease-in-out;
   position: absolute;
   top: 20px;
   left: 20px;
 }
 
-#menuIcon img {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
+.hamburger-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 30px #0000001a;
+}
+
+.icon-1, .icon-2, .icon-3 {
+  width: 32px;
+  height: 3px;
+  background-color: var(--bright-turquoise);
+  transition: all .4s cubic-bezier(.84, .06, .52, 1.8);
+  position: absolute;
+  top: 50%;
+  left: 25%;
+}
+
+.icon-1 {
+  transform: translateY(-8px);
+}
+
+.icon-3 {
+  transform: translateY(8px);
+}
+
+.icon-1.a {
+  transform: rotate(40deg);
+}
+
+.icon-3.b {
+  transform: rotate(-40deg);
+}
+
+.icon-2.c {
+  opacity: 0;
 }
 
 #menuOptions {
-  width: 0;
-  max-width: 750px;
   height: 100%;
-  background-color: var(--dark-background);
+  width: 0;
   z-index: 2;
-  transition: all .4s;
+  background-color: var(--dark-background);
+  opacity: 0;
+  transition: all .6s cubic-bezier(.62, .04, .3, 1.56) .1s;
   position: fixed;
   top: 0;
   left: 0;
-  overflow: hidden;
-}
-
-.show {
-  width: 100% !important;
 }
 
 #menuOptions ul {
-  height: 100%;
-  color: var(--bright-turquoise);
-  text-align: left;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 20px;
-  font-size: 2.5em;
-  line-height: 2;
-  list-style-type: none;
-  display: flex;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 40%;
 }
 
 #menuOptions ul li {
-  padding: 10px;
-  transition: color .3s;
+  color: var(--bright-turquoise);
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+  cursor: pointer;
+  opacity: 1;
+  font-size: 24px;
+  line-height: 2.2;
+  list-style: none;
+  transition: all .4s cubic-bezier(.68, .06, .59, 1);
 }
 
 #menuOptions ul li:hover {
   color: var(--dark-turquoise);
 }
 
+#menuOptions.show {
+  width: 50%;
+  opacity: 1;
+  transition: all .6s cubic-bezier(.68, -.25, .27, 1.26);
+}
+
 #overlay {
   width: 0;
-  height: 0;
+  height: 100%;
+  background-color: var(--dark-secondary);
   z-index: 1;
-  background-color: #00000080;
-  transition: all .3s;
+  transition: all .5s ease-in-out;
   position: fixed;
   top: 0;
   left: 0;
 }
 
-@media (width >= 501px) {
-  #menuOptions {
-    max-width: 500px;
-  }
+#overlay.slide {
+  width: 50%;
 }
 
 /*# sourceMappingURL=index.1303bb05.css.map */
