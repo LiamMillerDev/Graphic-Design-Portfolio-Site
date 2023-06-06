@@ -1,57 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Staci Bonnie Designs</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script type="module" src="/dist/app.js"></script>
   </head>
   <body>
-    <div class="hamburger-icon" id="menuIcon">
-      <div class="icon-1" id="icon1"></div>
-      <div class="icon-2" id="icon2"></div>
-      <div class="icon-3" id="icon3"></div>
-    </div>
+    <header>
+      <button class="hamburger-icon" id="menuIcon" aria-label="Menu">
+        <span class="icon-1" id="icon1"></span>
+        <span class="icon-2" id="icon2"></span>
+        <span class="icon-3" id="icon3"></span>
+      </button>
+      <nav id="menuOptions">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Portfolio</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
 
-    <nav id="menuOptions">
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Portfolio</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
+    <main>
+      <section class="dark-blue" id="overlay"></section>
 
-    <div class="dark-blue" id="overlay"></div>
+      <section id="landingImage">
+        <img src="/assets/landingImage.png" alt="Staci Bonnie Designs" />
+      </section>
 
-    <div id="landingImage">
-      <img src="/assets/landingImage.png" alt="Staci Bonnie Designs" />
-    </div>
+      <section>
+        <div id="about">
+          <h2>About Me</h2>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="about-card">
+                  <img src="./assets/slide1.webp" alt="Childhood" />
+                  <div class="info-hover">
+                    <h3>Childhood</h3>
+                    <p>
+                      Discovering a passion for art at a young age while
+                      doodling in school notebooks.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="about-card">
+                  <img src="./assets/slide2.jpg" alt="Highschool" />
+                  <div class="info-hover">
+                    <h3>Highschool</h3>
+                    <p>
+                      Discovering a passion for art at a young age while
+                      doodling in school notebooks.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="about-card">
+                  <img src="./assets/slide2.jpg" alt="College" />
+                  <div class="info-hover">
+                    <h3>College</h3>
+                    <p>
+                      Started studying arts professionally and developed a love
+                      for digital art.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
 
-    <!-- About Section -->
-    <div id="about">
-      <h2>About Me</h2>
-      <!-- Content here -->
-    </div>
+      <section id="portfolio">
+        <h2>My Portfolio</h2>
+        <!-- Content here -->
+      </section>
 
-    <!-- Portfolio Section -->
-    <div id="portfolio">
-      <h2>My Portfolio</h2>
-      <!-- Content here -->
-    </div>
+      <section id="testimonials">
+        <h2>Testimonials</h2>
+        <!-- Content here -->
+      </section>
 
-    <!-- Testimonials Section -->
-    <div id="testimonials">
-      <h2>Testimonials</h2>
-      <!-- Content here -->
-    </div>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <!-- Content here -->
+      </section>
+    </main>
 
-    <!-- Contact Section -->
-    <div id="contact">
-      <h2>Contact Me</h2>
-      <!-- Content here -->
-    </div>
-
-    <!-- Footer Section -->
     <footer id="footer">
       <!-- Content here -->
     </footer>

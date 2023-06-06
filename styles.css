@@ -151,3 +151,108 @@ body::-webkit-scrollbar {
 #overlay.slide {
   width: 50%;
 }
+
+.swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--bright-turquoise);
+  /* Add other styles as needed */
+}
+
+.swiper-pagination-bullet {
+  background: var(--bright-turquoise);
+  /* Add other styles as needed */
+}
+
+/* About Section */
+#about {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+
+#about h2 {
+  width: 100%;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: var(--bright-turquoise);
+  margin-bottom: 1em;
+}
+
+.about-card {
+  position: relative;
+  overflow: hidden;
+  flex-basis: calc(50% - 1em); /* adjust this to control the card width */
+  background-color: var(--dark-secondary);
+  color: var(--light-gray);
+  margin: 0.5em;
+  padding: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.about-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-card img {
+  width: 100%;
+  transition: transform 0.5s;
+}
+
+.about-card:hover img {
+  transform: scale(1.1);
+}
+
+.info-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.info-hover h2,
+.info-hover h3,
+.info-hover p {
+  color: var(--light-gray);
+  text-align: center;
+  margin: 0;
+}
+
+.about-card:hover .info-hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .about-card {
+    flex-basis: 100%;
+  }
+}
