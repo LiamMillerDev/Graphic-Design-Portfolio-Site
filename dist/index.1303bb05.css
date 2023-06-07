@@ -143,11 +143,11 @@ body::-webkit-scrollbar {
 }
 
 .swiper-container {
-  width: 100%;
   flex-direction: row;
   padding-top: 50px;
   padding-bottom: 50px;
   display: flex;
+  position: relative;
 }
 
 .swiper-slide {
@@ -162,7 +162,33 @@ body::-webkit-scrollbar {
 }
 
 .swiper-button-next, .swiper-button-prev {
+  width: 27px;
+  height: 44px;
+  z-index: 100;
+  cursor: pointer;
   color: var(--bright-turquoise);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 50%;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  line-height: 1;
+  text-transform: none !important;
 }
 
 .swiper-pagination-bullet {
@@ -170,6 +196,7 @@ body::-webkit-scrollbar {
 }
 
 #about {
+  height: auto;
   flex-wrap: wrap;
   justify-content: center;
   padding: 2em;
@@ -187,7 +214,7 @@ body::-webkit-scrollbar {
 .about-card {
   background-color: var(--dark-secondary);
   color: var(--light-gray);
-  flex-basis: calc(50% - 1em);
+  width: 95%;
   margin: .5em;
   padding: 1em;
   transition: all .3s ease-in-out;
@@ -237,7 +264,7 @@ body::-webkit-scrollbar {
 
 @media screen and (width <= 768px) {
   .about-card {
-    flex-basis: 100%;
+    width: 90%;
   }
 }
 
