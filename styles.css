@@ -1,10 +1,5 @@
-/* Custom Google font */
+/* Importing Custom Google font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-
-/* Global settings */
-* {
-  box-sizing: border-box;
-}
 
 /* Color palette */
 :root {
@@ -15,22 +10,34 @@
   --dark-turquoise: #45a29e;
 }
 
-/* Base settings for the page */
+/* Global settings */
+*,
+body,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body,
 html {
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
   font-family: Arial, sans-serif;
   background-color: var(--dark-background);
   color: var(--light-gray);
 }
 
-/* Remove scrollbar from the body */
 body::-webkit-scrollbar {
   width: 0px;
+}
+
+/* section styles */
+
+section {
+  width: 100vw;
+  height: 100vh;
 }
 
 h2 {
@@ -46,7 +53,8 @@ h2 {
   transform: translateY(0);
 }
 
-/* Landing image container settings */
+/* Landing page styles */
+
 #landingImage {
   position: relative;
   width: 100vw;
@@ -54,20 +62,20 @@ h2 {
   z-index: 0;
 }
 
-/* Landing image settings */
 #landingImage img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
+/* Hamburger icon styles */
 .hamburger-icon {
   position: absolute;
   height: 60px;
   width: 60px;
   top: 20px;
   left: 20px;
-  z-index: 3;
+  z-index: 3000;
   cursor: pointer;
   border-radius: 50%;
   transition: all 0.2s ease-in-out;
@@ -111,13 +119,14 @@ h2 {
   opacity: 0;
 }
 
+/* Menu styles */
 #menuOptions {
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 0;
-  z-index: 2;
+  z-index: 2000;
   background-color: var(--dark-background);
   transition: all 600ms cubic-bezier(0.62, 0.04, 0.3, 1.56);
   transition-delay: 100ms;
@@ -153,6 +162,7 @@ h2 {
   transition: all 600ms cubic-bezier(0.68, -0.25, 0.27, 1.26);
 }
 
+/* Overlay styles */
 #overlay {
   position: fixed;
   top: 0;
@@ -160,7 +170,7 @@ h2 {
   width: 0;
   height: 100%;
   background-color: var(--dark-secondary);
-  z-index: 1;
+  z-index: 1000;
   transition: all 0.5s ease-in-out;
 }
 
@@ -168,6 +178,17 @@ h2 {
   width: 50%;
 }
 
+/* About section styles */
+
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Swiper styles */
 .swiper-container {
   width: 100%;
   position: relative;
@@ -207,23 +228,24 @@ h2 {
   text-align: center;
 }
 
-.swiper-slide h3 {
+.swiper-slide h3,
+.swiper-slide p {
   color: var(--light-gray);
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
   font-family: "Helvetica Neue", Arial, sans-serif;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.swiper-slide p {
-  color: var(--light-gray);
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  letter-spacing: 0.5px;
+.swiper-slide h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  text-transform: uppercase;
 }
 
-/* Overwrite swiper defaults */
+.swiper-slide p {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+/* Overwriting swiper defaults */
 #about .swiper-pagination-bullet {
   background-color: transparent !important;
   border: 2px solid #fff !important;
@@ -260,7 +282,7 @@ h2 {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E") !important;
 }
 
-/* Mobile view */
+/* Media query for mobile view */
 @media only screen and (max-width: 640px) {
   .swiper-slide .slide-content {
     flex-direction: column;

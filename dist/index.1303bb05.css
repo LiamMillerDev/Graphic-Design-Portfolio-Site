@@ -1,8 +1,4 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap";
-* {
-  box-sizing: border-box;
-}
-
 :root {
   --dark-background: #0b0c10;
   --dark-secondary: #1f2833;
@@ -11,19 +7,28 @@
   --dark-turquoise: #45a29e;
 }
 
+*, body, html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body, html {
   height: 100%;
   width: 100%;
   background-color: var(--dark-background);
   color: var(--light-gray);
-  margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
   width: 0;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
 }
 
 h2 {
@@ -55,7 +60,7 @@ h2 {
 .hamburger-icon {
   height: 60px;
   width: 60px;
-  z-index: 3;
+  z-index: 3000;
   cursor: pointer;
   background: #fff3;
   border-radius: 50%;
@@ -103,7 +108,7 @@ h2 {
 #menuOptions {
   height: 100%;
   width: 0;
-  z-index: 2;
+  z-index: 2000;
   background-color: var(--dark-background);
   opacity: 0;
   transition: all .6s cubic-bezier(.62, .04, .3, 1.56) .1s;
@@ -145,7 +150,7 @@ h2 {
   width: 0;
   height: 100%;
   background-color: var(--dark-secondary);
-  z-index: 1;
+  z-index: 1000;
   transition: all .5s ease-in-out;
   position: fixed;
   top: 0;
@@ -154,6 +159,14 @@ h2 {
 
 #overlay.slide {
   width: 50%;
+}
+
+#about {
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .swiper-container {
@@ -195,19 +208,19 @@ h2 {
   display: flex;
 }
 
-.swiper-slide h3 {
+.swiper-slide h3, .swiper-slide p {
   color: var(--light-gray);
-  text-transform: uppercase;
   letter-spacing: .5px;
   text-shadow: 2px 2px 4px #00000080;
   font-family: Helvetica Neue, Arial, sans-serif;
+}
+
+.swiper-slide h3 {
+  text-transform: uppercase;
   font-size: clamp(1.5rem, 2.5vw, 2.5rem);
 }
 
 .swiper-slide p {
-  color: var(--light-gray);
-  letter-spacing: .5px;
-  font-family: Helvetica Neue, Arial, sans-serif;
   font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 
