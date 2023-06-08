@@ -1,9 +1,9 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Swiper, { Navigation, Pagination } from "swiper";
+import Swiper, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
 
-Swiper.use([Navigation, Pagination]);
+Swiper.use([Navigation, Pagination, Autoplay]);
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -25,9 +25,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   const swiper = new Swiper(".swiper-container", {
     loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: true,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      640: {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      },
     },
     pagination: {
       el: ".swiper-pagination",

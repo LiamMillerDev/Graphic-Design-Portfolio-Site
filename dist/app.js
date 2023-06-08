@@ -27,7 +27,7 @@ const gsap_1 = require("gsap");
 const ScrollTrigger_1 = require("gsap/ScrollTrigger");
 const swiper_1 = __importStar(require("swiper"));
 require("swiper/swiper-bundle.css");
-swiper_1.default.use([swiper_1.Navigation, swiper_1.Pagination]);
+swiper_1.default.use([swiper_1.Navigation, swiper_1.Pagination, swiper_1.Autoplay]);
 gsap_1.gsap.registerPlugin(ScrollTrigger_1.ScrollTrigger);
 document.addEventListener("DOMContentLoaded", function () {
     const icon1 = document.getElementById("icon1");
@@ -47,9 +47,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     const swiper = new swiper_1.default(".swiper-container", {
         loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: true,
+        },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            640: {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            },
         },
         pagination: {
             el: ".swiper-pagination",

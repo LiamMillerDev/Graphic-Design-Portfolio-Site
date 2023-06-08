@@ -615,7 +615,8 @@ const swiper_1 = __importStar(require("7b88189458a6a5c0"));
 require("a661d63f32de65f2");
 swiper_1.default.use([
     swiper_1.Navigation,
-    swiper_1.Pagination
+    swiper_1.Pagination,
+    swiper_1.Autoplay
 ]);
 gsap_1.gsap.registerPlugin(ScrollTrigger_1.ScrollTrigger);
 document.addEventListener("DOMContentLoaded", function() {
@@ -634,9 +635,21 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     const swiper = new swiper_1.default(".swiper-container", {
         loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: true
+        },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
+        },
+        breakpoints: {
+            640: {
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                }
+            }
         },
         pagination: {
             el: ".swiper-pagination"
