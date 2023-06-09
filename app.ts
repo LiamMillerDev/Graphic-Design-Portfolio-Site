@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
-      640: {
+      750: {
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
