@@ -1,4 +1,5 @@
-@import "https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap";
+@import "https://fonts.cdnfonts.com/css/eb-garamond-2";
 :root {
   --dark-background: #0b0c10;
   --dark-secondary: #1f2833;
@@ -29,18 +30,19 @@ body::-webkit-scrollbar {
 section {
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 h2 {
-  color: var(--bright-turquoise);
+  color: var(--light-gray);
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px #00000080;
+  letter-spacing: .5em;
   text-align: center;
   opacity: 1;
-  margin: 20px 0;
-  font-family: Poppins, Arial, sans-serif;
-  font-size: 3em;
+  margin: 20px 0 5%;
+  font-family: Cormorant Garamond, serif;
+  font-size: clamp(1rem, 5vw, 5rem);
+  font-weight: 400;
   transform: translateY(0);
 }
 
@@ -209,18 +211,20 @@ h2 {
 }
 
 .swiper-slide h3, .swiper-slide p {
-  color: var(--light-gray);
   letter-spacing: .5px;
   text-shadow: 2px 2px 4px #00000080;
-  font-family: Helvetica Neue, Arial, sans-serif;
+  font-family: EB Garamond, sans-serif;
 }
 
 .swiper-slide h3 {
+  color: var(--bright-turquoise);
   text-transform: uppercase;
+  margin-bottom: 2%;
   font-size: clamp(1.5rem, 2.5vw, 2.5rem);
 }
 
 .swiper-slide p {
+  color: var(--light-gray);
   font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 

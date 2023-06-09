@@ -8,7 +8,6 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
   </head>
   <body>
     <header>
@@ -27,16 +26,16 @@
       </nav>
     </header>
 
-    <main>
+    <main id="scroll-container">
       <section id="overlay"></section>
 
-      <section id="landingImage">
+      <section id="landingImage" class="one">
         <img src="/assets/landingImage.png" alt="Staci Bonnie Designs" />
       </section>
 
       <section>
-        <div id="about">
-          <h2>Unwrapping My Story</h2>
+        <div id="about" class="two">
+          <h2>About</h2>
           <!-- Swiper section -->
           <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -129,18 +128,18 @@
         </div>
       </section>
 
-      <section id="portfolio">
-        <h2>Behind the Scenes</h2>
+      <section id="portfolio" class="three">
+        <h2>Portfolio</h2>
         <!-- Content here -->
       </section>
 
-      <section id="testimonials">
-        <h2>Hear It From the Crowd</h2>
+      <section id="testimonials" class="four">
+        <h2>testimonials</h2>
         <!-- Content here -->
       </section>
 
-      <section id="contact">
-        <h2>Let's Make Magic Together</h2>
+      <section id="contact" class="five">
+        <h2>Contact</h2>
         <!-- Content here -->
       </section>
     </main>

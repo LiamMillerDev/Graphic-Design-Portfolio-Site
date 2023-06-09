@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       overlay.classList.toggle("slide");
     });
   }
+
   const swiper = new Swiper(".swiper-container", {
     loop: true,
     autoplay: {
@@ -43,6 +44,29 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     pagination: {
       el: ".swiper-pagination",
+    },
+  });
+
+  ScrollTrigger.scrollerProxy("#scroll-container", {
+    scrollTop(value) {
+      const scrollContainer = document.getElementById("scroll-container");
+      if (!scrollContainer) {
+        console.error("#scroll-container not found");
+        return;
+      }
+      if (arguments.length && typeof value === "number") {
+        scrollContainer.scrollTop = value;
+      } else {
+        return scrollContainer.scrollTop;
+      }
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
     },
   });
 });
