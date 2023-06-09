@@ -1,10 +1,12 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/all";
 import Swiper, { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/swiper-bundle.css";
 
 Swiper.use([Navigation, Pagination, Autoplay]);
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 document.addEventListener("DOMContentLoaded", function () {
   const icon1 = document.getElementById("icon1") as HTMLElement;
@@ -44,29 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     pagination: {
       el: ".swiper-pagination",
-    },
-  });
-
-  ScrollTrigger.scrollerProxy("#scroll-container", {
-    scrollTop(value) {
-      const scrollContainer = document.getElementById("scroll-container");
-      if (!scrollContainer) {
-        console.error("#scroll-container not found");
-        return;
-      }
-      if (arguments.length && typeof value === "number") {
-        scrollContainer.scrollTop = value;
-      } else {
-        return scrollContainer.scrollTop;
-      }
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0,
-        left: 0,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      };
     },
   });
 });

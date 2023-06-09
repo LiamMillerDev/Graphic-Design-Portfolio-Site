@@ -27,9 +27,22 @@ body::-webkit-scrollbar {
   width: 0;
 }
 
+#scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+#scroll-container {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 section {
   width: 100vw;
   height: 100vh;
+  scroll-snap-align: start;
   position: relative;
 }
 

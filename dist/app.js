@@ -25,10 +25,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const gsap_1 = require("gsap");
 const ScrollTrigger_1 = require("gsap/ScrollTrigger");
+const all_1 = require("gsap/all");
 const swiper_1 = __importStar(require("swiper"));
 require("swiper/swiper-bundle.css");
 swiper_1.default.use([swiper_1.Navigation, swiper_1.Pagination, swiper_1.Autoplay]);
 gsap_1.gsap.registerPlugin(ScrollTrigger_1.ScrollTrigger);
+gsap_1.gsap.registerPlugin(all_1.ScrollToPlugin);
 document.addEventListener("DOMContentLoaded", function () {
     const icon1 = document.getElementById("icon1");
     const icon2 = document.getElementById("icon2");
@@ -65,29 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         pagination: {
             el: ".swiper-pagination",
-        },
-    });
-    ScrollTrigger_1.ScrollTrigger.scrollerProxy("#scroll-container", {
-        scrollTop(value) {
-            const scrollContainer = document.getElementById("scroll-container");
-            if (!scrollContainer) {
-                console.error("#scroll-container not found");
-                return;
-            }
-            if (arguments.length && typeof value === "number") {
-                scrollContainer.scrollTop = value;
-            }
-            else {
-                return scrollContainer.scrollTop;
-            }
-        },
-        getBoundingClientRect() {
-            return {
-                top: 0,
-                left: 0,
-                width: window.innerWidth,
-                height: window.innerHeight,
-            };
         },
     });
 });
